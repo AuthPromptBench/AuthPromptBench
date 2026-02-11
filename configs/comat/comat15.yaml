@@ -1,0 +1,10 @@
+defaults:
+  - /comat/model/sd15@model
+  - /comat/dataset/gan_data@dataset
+  - /comat/trainer/trainer@trainer
+  - _self_
+
+dataset:
+  training_prompts: "./data/train_data_sd15/gan_train_data.jsonl"
+
+seed: 995

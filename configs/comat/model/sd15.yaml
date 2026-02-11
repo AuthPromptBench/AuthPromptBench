@@ -1,0 +1,45 @@
+# @package _global_
+pretrain_model: "runwayml/stable-diffusion-v1-5"
+model_name: "sd_1_5_attrcon"
+weight_dtype: 'fp16'
+full_finetuning: false
+tune_vae: false
+tune_text_encoder: false
+train_text_encoder_lora: true
+lora_rank: 128
+revision: null
+scheduler: "DDPM"
+gradient_checkpointing: false
+caption_model_names:
+  - Blip
+weights:
+  - 1.0
+gan_loss: true
+gan_model_arch: "gan_sd_1_5"
+gan_loss_weight: 1.0
+gan_unet_lastlayer_cls: false
+condition_discriminator: false
+resolution: 512
+K: 5
+total_step: 50
+do_classifier_free_guidance: ${cfg_scale > 0}
+train_batch_size: 4
+mask_token_loss_weight: 1e-3
+mask_pixel_loss_weight: 5e-5
+norm_grad: true
+cfg_scale: 7.5
+cfg_rescale: 0.0
+attrcon_train_steps: 2
+learning_rate: 5e-5
+learning_rate_D: 5e-5 
+gradient_accumulation_steps: 1
+lr_scheduler: "constant"
+lr_warmup_steps: 0
+adam_beta1: 0.9
+adam_beta2: 0.999
+adam_weight_decay: 0.1
+adam_epsilon: 1e-08
+max_grad_norm: 0.1
+adam_beta1_D: 0.0
+adam_beta2_D: 0.999
+max_grad_norm_D: 1.0

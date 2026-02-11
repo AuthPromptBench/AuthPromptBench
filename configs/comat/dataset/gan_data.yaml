@@ -1,0 +1,8 @@
+# @package _global_
+training_prompts: ???
+validation_prompts_file: "./data/valid_data/valid.txt"
+validation_prompts: "A man walking on street"
+dataloader_num_workers: 0
+center_crop: false
+image_folder: null
+max_train_samples: null
